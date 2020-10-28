@@ -82,7 +82,6 @@ class CarController {
          */
         Car newCar = carService.save(car);
         Resource<Car> resource = assembler.toResource(newCar);
-
         return ResponseEntity.created(new URI(resource.getId().expand().getHref())).body(resource);
     }
 
